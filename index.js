@@ -12,13 +12,8 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'motivation',
-        message: 'What was your motivation?', 
-    },
-    {
-        type: 'input',
         name: 'reason',
-        message: 'Why did you build this project?', 
+        message: 'Why did you build this application?', 
     },
     {
         type: 'input',
@@ -33,25 +28,26 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: 'What are the steps required to install your project?', 
+        message: 'What are the steps required to install your application?', 
     },
     {
         type: 'input',
         name: 'contributing',
-        message: 'How to Contribute?', 
+        message: 'What is an industry standard link on how to contribute?', 
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'How to use this?',
+        message: 'What example can you show on how to use this?',
     },
     {
         type: 'list',
         name: 'license',
         message: 'Which license the application is covered under?',
+        choices: ["The MIT License","The 2-Clause BSD License","The 3-Clause BSD License", "None"]
     },
     {
-        type: 'list',
+        type: 'input',
         name: 'tests',
         message: 'How to test this application?',
     },
@@ -68,15 +64,15 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-fs.writeFile('README.md', process.argv[2], (err) =>
-  err ? console.error(err) : console.log('Success!')
-);
-
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then(function(answers) {
-        const markdownText = generateMarkdown(questions);
-        writeToFile("High Quality README", markdownText);
+    inquirer.prompt(questions)
+    .then(function(answers) {
+        const markdownText = generateMarkdown(answers);
+        console.log(markdownText);
+        fs.writeFile('./utils/README.md', markdownText, (err) =>
+        err ? console.error(err) : console.log('Success!')
+      );
     })
 }
 
