@@ -19,7 +19,7 @@
   To install this first, you need to have node js installed in your computer. Second, go to your command-line application. Third, go to your directory you want to put this application. Fourth, make sure to have a package.json file, .gitignore folder with node_modules and index.js file in your repo. Lastly, type 'npm i' to install.
 
   ## Usage
-  ![Screenshot01](../assets/images/Screenshot%20(1080).png)
+  ![Screenshot01](./assets/images/Screenshot%20(1080).png)
   Link to walkthrough video - https://drive.google.com/file/d/16xPsSHtm-q8TPRW2t_zxwvBwPYSY_3IS/view?usp=sharing
 
   Link to README file - https://vscode.dev/github/jzerobby/NodeJSReadMeJRMH9/blob/main/utils/README.md
